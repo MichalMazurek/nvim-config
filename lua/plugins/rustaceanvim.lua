@@ -1,3 +1,4 @@
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 return {
   'mrcjkb/rustaceanvim',
   version = '^4', -- Recommended
@@ -6,5 +7,5 @@ return {
     { "<leader>ra", "<cmd>RustLsp codeAction<cr>", desc = "Rust Code Action", mode = "n"},
     { "<leader>re", "<cmd>RustLsp explainError<cr>", desc = "Rust Explain Error", mode = "n"},
     { "<leader>rd", "<cmd>RustLsp renderDiagnostic<cr>", desc = "Rust Render Diagnostic", mode = "n"},
-  }
+  },
 }
