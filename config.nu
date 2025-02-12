@@ -2,8 +2,22 @@ use std/util "path add"
 
 $env.config.buffer_editor = "nvim"
 $env.SHELL = "~/.cargo/bin/nu"
+$env.EDITOR = "nvim"
 path add "~/.local/bin/"
+path add "~/.cargo/bin"
+path add "~/.bin/"
+path add "~/.local/share/fnm/aliases/default/bin"
+path add "~/.pyenv/shims"
 
+
+def fvim [] {
+  let file = (
+    fzf --no-multi
+  )
+  if ($file != '') {
+    nvim $file
+  }
+}
 
 # https://carapace-sh.github.io/carapace-bin/install.html
 let carapace_completer = {|spans|
@@ -18,6 +32,3 @@ $env.config.completions.external = {
 }
 
 source ~/.oh-my-posh.nu
-
-
-alias cat = batcat
